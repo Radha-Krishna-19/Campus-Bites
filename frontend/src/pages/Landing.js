@@ -100,6 +100,13 @@ export default function Landing() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    if (window.location.hash) {
+      // Fonts change the hero's height, so wait for them before jumping.
+      document.fonts.ready.then(() => document.querySelector(window.location.hash)?.scrollIntoView());
+    }
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
