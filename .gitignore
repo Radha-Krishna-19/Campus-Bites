@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Builds
+build/
+dist/
+coverage/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Editors and local tooling
+.idea/
+.vscode/
+.claude/
+.DS_Store
+
+# Logs
+*.log
